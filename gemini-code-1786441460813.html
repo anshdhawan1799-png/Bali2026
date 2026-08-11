@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title -->
+    <title>Trip Itinerary & Travel Hub</title>
+
+    <!-- Random Favicon (Airplane Emoji) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+
+    <!-- Open Graph Meta Tags for WhatsApp/Social Media Sharing -->
+    <meta property="og:title" content="Bali 2026: Trip Itinerary & Travel Hub" />
+    <meta property="og:description" content="Interactive schedule, attached booking documents, and dining recommendations for our trip to Ubud and Seminyak." />
+    <meta property="og:type" content="website" />
+    <!-- Random high-quality display image from Unsplash (Bali Temple) -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; }
+        .drag-handle { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 4px 4px; width: 8px; height: 20px; }
+        .hide { display: none !important; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-[#125343] text-white pt-10 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold mb-5 text-emerald-50 border border-white/20">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Travel Itinerary Hub
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-bold mb-3 tracking-tight">Trip Itinerary & Travel Hub</h1>
+                    <p class="text-emerald-100/80 text-sm md:text-base max-w-2xl leading-relaxed">
+                        Interactive schedule, attached booking documents, and dining recommendations for Ubud and Seminyak.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex gap-8 border-b border-white/10 mt-10">
+                <button id="tab-timeline" class="tab-btn pb-3 border-b-2 border-[#1cb87e] text-white font-medium text-sm flex items-center gap-2 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    Schedule Timeline
+                </button>
+                <button id="tab-food" class="tab-btn pb-3 border-b-2 border-transparent text-white/60 hover:text-white font-medium text-sm flex items-center gap-2 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path></svg>
+                    Food Guide (31)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto px-6 md:px-12 py-8">
+        
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-0.5">Total Events</p>
+                    <p class="text-xl font-bold text-gray-800">21</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-0.5">Scheduled Days</p>
+                    <p class="text-xl font-bold text-gray-800">7</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-0.5">Documents</p>
+                    <p class="text-xl font-bold text-gray-800">18</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-500">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-0.5">Locations/Notes</p>
+                    <p class="text-xl font-bold text-gray-800">9</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div id="section-timeline">
+            <!-- Filter Bar -->
+            <div class="bg-white rounded-xl border border-gray-100 p-2 shadow-sm flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                <div class="flex items-center gap-2 w-full overflow-x-auto pb-2 md:pb-0 scrollbar-hide px-2">
+                    <div class="flex items-center gap-1 text-gray-400 text-sm mr-2 whitespace-nowrap">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+                        FILTER DAY:
+                    </div>
+                    <div id="filter-container" class="flex gap-2">
+                        <!-- Filter buttons injected here -->
+                    </div>
+                </div>
+                <div class="w-full md:w-64 px-2 md:px-0">
+                    <div class="relative">
+                        <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <input type="text" placeholder="Search details, notes, docs..." class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-[#1cb87e] transition-colors">
+                    </div>
+                </div>
+            </div>
+
+            <!-- List Container -->
+            <div id="itinerary-list" class="space-y-3">
+                <!-- Cards injected here -->
+            </div>
+        </div>
+
+        <!-- Food Guide Section -->
+        <div id="section-food" class="hide space-y-8">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <span class="bg-emerald-100 text-emerald-700 p-2 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></span>
+                    Ubud Dining
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="ubud-food-list"></div>
+            </div>
+            
+            <hr class="border-gray-200">
+
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <span class="bg-blue-100 text-blue-700 p-2 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></span>
+                    Seminyak Dining
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="seminyak-food-list"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const itineraryData = [
+            { day: "Aug 15", time: "12:15 to 14:10", details: "Flight Ahm to Delhi", docs: "Flight Tickets", link: "https://drive.google.com/file/d/1yaqd1fmaF3hGiT4djx78MwIaT_mW1p9a/view?usp=drive_link", notes: "" },
+            { day: "Aug 15", time: "20:50 to 07:25", details: "Flight Del to Denpasar", docs: "Flight Tickets", link: "https://drive.google.com/file/d/19H9-LBeXFGMDi4eGBHKY6oXoPMl30-9V/view?usp=drive_link", notes: "Ansh's eVisa & Tanay's eVisa in Drive" },
+            { day: "Aug 16", time: "09:00", details: "Cab to Ubud Villa", docs: "Villa Driver (Dedi WA)", link: "", notes: "Haven by The River, Link in maps" },
+            { day: "Aug 16", time: "11:00", details: "Checkin at Haven", docs: "Villa Booking", link: "https://drive.google.com/file/d/1ryWWVko_KzSnItZlQ6hrboDvM8ck5vaQ/view?usp=drive_link", notes: "" },
+            { day: "Aug 16", time: "15:00", details: "Cab to ATV", docs: "Booked by Villa", link: "", notes: "" },
+            { day: "Aug 16", time: "16:00", details: "ATV", docs: "Booked by Villa", link: "", notes: "" },
+            { day: "Aug 16", time: "18:30", details: "Cab to Villa", docs: "Booked by Villa", link: "", notes: "" },
+            { day: "Aug 17", time: "08:20", details: "Cab to Kart", docs: "Grab", link: "", notes: "Jungle Cart Office" },
+            { day: "Aug 17", time: "09:00", details: "Jungle Kart", docs: "Tickets", link: "https://drive.google.com/file/d/10r6g7SwHJlmDr2XyxQcpPrT9ySgr5nlm/view?usp=drive_link", notes: "" },
+            { day: "Aug 17", time: "TBD", details: "Chill after Jungle Kart", docs: "", link: "", notes: "" },
+            { day: "Aug 18", time: "02:30", details: "Pickup", docs: "Booked by GYG", link: "", notes: "LO for Driver's text" },
+            { day: "Aug 18", time: "03:00", details: "Jeep Tour", docs: "Tickets", link: "https://drive.google.com/file/d/1nyTQPH2ednRRkWdWW7adn0iqzXsqo59V/view?usp=drive_link", notes: "" },
+            { day: "Aug 18", time: "11:00", details: "Back to Villa", docs: "", link: "", notes: "" },
+            { day: "Aug 18", time: "Till Evening", details: "Work and Chill", docs: "", link: "", notes: "" },
+            { day: "Aug 18", time: "20:00", details: "Dinner at Seven Paintings", docs: "Reservation", link: "https://drive.google.com/file/d/1IO_4GaSah-djYp62x-z7LM8qbw6exR0i/view?usp=drive_link", notes: "" },
+            { day: "Aug 19", time: "After Checkout", details: "Cab to Seminyak", docs: "Grab", link: "", notes: "Villa Luja by GORO" },
+            { day: "Aug 19", time: "TBD", details: "Checkin at GORO", docs: "Villa Booking", link: "https://drive.google.com/file/d/13J5OviLhOwRkGNHRo8eC6B1friLQ41T_/view?usp=drive_link", notes: "" },
+            { day: "Aug 19", time: "Evening", details: "Table at Savaya", docs: "Reservation needed", link: "", notes: "" },
+            { day: "Aug 20", time: "14:00", details: "Leave for Helipad", docs: "Grab", link: "", notes: "Balicopter Tour" },
+            { day: "Aug 20", time: "16:00", details: "Helicopter Tour", docs: "Tickets", link: "https://drive.google.com/file/d/1MVT3X6lFAb6h5uIzW0na6Kubp1r4f2Un/view?usp=drive_link", notes: "" },
+            { day: "Aug 21", time: "16:00", details: "Yacht", docs: "Confirmation", link: "https://drive.google.com/file/d/1V3k3pZE3qz90BKBbxzWJ30mi4OKYBvvI/view?usp=drive_link", notes: "" }
+        ];
+
+        const foodData = {
+            ubud: ["NusantarA", "Locavore to Go", "Seven Paintings Ubud", "Juna", "Pasir", "Mozaic", "Nautilus", "Cretya (Sunset)", "Zest Ubud", "Clear Cafe", "Pinstripe Bar", "The Melting Pot", "Lai Lai", "No Mas Bar", "CP lounge"],
+            seminyak: ["Bread Yard (v/nv)", "32do (v/nv)", "Kenji Ramen (nv)", "Kynd Community (v)", "Da Maria (v/nv)", "Bossman (nv)", "Sea Circus (v/nv)", "Shelter (v/nv)", "Nalu Bowls (v)", "Coffee Cartel (v/nv)", "Motel Mexicola (v/nv)", "Cafe Organic (v)", "Peloton Supershop (v)", "Shady Shack (v)", "Milk & Madu (v/nv)", "Seeds of Life (v)"]
+        };
+
+        const days = ["All Days", "Aug 15", "Aug 16", "Aug 17", "Aug 18", "Aug 19", "Aug 20", "Aug 21"];
+        let currentFilter = "All Days";
+
+        // Render Filters
+        const filterContainer = document.getElementById('filter-container');
+        function renderFilters() {
+            filterContainer.innerHTML = days.map(day => `
+                <button onclick="setFilter('${day}')" class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${currentFilter === day ? 'bg-[#1cb87e] text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}">
+                    ${day}
+                </button>
+            `).join('');
+        }
+
+        // Render Itinerary Cards
+        const listContainer = document.getElementById('itinerary-list');
+        function renderList() {
+            const filteredData = currentFilter === "All Days" ? itineraryData : itineraryData.filter(item => item.day === currentFilter);
+            
+            listContainer.innerHTML = filteredData.map(item => `
+                <div class="bg-white rounded-xl border border-gray-100 p-4 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow group">
+                    <div class="mt-2 opacity-30 group-hover:opacity-100 transition-opacity">
+                        <div class="drag-handle"></div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs font-semibold flex items-center gap-1 border border-emerald-100/50">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                ${item.day}
+                            </span>
+                            <span class="text-gray-500 text-xs font-medium flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                ${item.time}
+                            </span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-3">${item.details}</h3>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            ${item.docs ? `
+                                <a ${item.link ? `href="${item.link}" target="_blank"` : ''} class="bg-[#f3f4fa] text-[#5561db] hover:bg-[#ebedfa] px-2.5 py-1.5 rounded flex items-center gap-1.5 text-xs font-medium transition-colors border border-[#e5e7f6] ${item.link ? 'cursor-pointer' : 'cursor-default'}">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    ${item.docs} ${item.link ? `<svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>` : ''}
+                                </a>
+                            ` : ''}
+                            ${item.notes ? `
+                                <div class="bg-amber-50 text-amber-700 px-2.5 py-1.5 rounded flex items-center gap-1.5 text-xs font-medium border border-amber-100/60">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    ${item.notes}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-300">
+                        <button class="hover:text-blue-500 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button>
+                        <button class="hover:text-red-500 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Food Guide
+        function renderFood() {
+            document.getElementById('ubud-food-list').innerHTML = foodData.ubud.map(place => `
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center gap-3 hover:-translate-y-0.5 transition-transform">
+                    <div class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path></svg>
+                    </div>
+                    <span class="font-medium text-gray-800 text-sm">${place}</span>
+                </div>
+            `).join('');
+
+            document.getElementById('seminyak-food-list').innerHTML = foodData.seminyak.map(place => {
+                const isVeganOptions = place.includes('(v)') || place.includes('(v/nv)');
+                return `
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between gap-3 hover:-translate-y-0.5 transition-transform">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path></svg>
+                        </div>
+                        <span class="font-medium text-gray-800 text-sm">${place.replace(/\(v\/nv\)|\(v\)|\(nv\)/g, '').trim()}</span>
+                    </div>
+                    ${isVeganOptions ? '<span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">VEG OPTIONS</span>' : ''}
+                </div>
+            `}).join('');
+        }
+
+        // Global functions
+        window.setFilter = (day) => {
+            currentFilter = day;
+            renderFilters();
+            renderList();
+        };
+
+        // Tab Switching Logic
+        const tabTimeline = document.getElementById('tab-timeline');
+        const tabFood = document.getElementById('tab-food');
+        const secTimeline = document.getElementById('section-timeline');
+        const secFood = document.getElementById('section-food');
+
+        tabTimeline.addEventListener('click', () => {
+            tabTimeline.className = "tab-btn pb-3 border-b-2 border-[#1cb87e] text-white font-medium text-sm flex items-center gap-2 transition-colors";
+            tabFood.className = "tab-btn pb-3 border-b-2 border-transparent text-white/60 hover:text-white font-medium text-sm flex items-center gap-2 transition-colors";
+            secTimeline.classList.remove('hide');
+            secFood.classList.add('hide');
+        });
+
+        tabFood.addEventListener('click', () => {
+            tabFood.className = "tab-btn pb-3 border-b-2 border-[#1cb87e] text-white font-medium text-sm flex items-center gap-2 transition-colors";
+            tabTimeline.className = "tab-btn pb-3 border-b-2 border-transparent text-white/60 hover:text-white font-medium text-sm flex items-center gap-2 transition-colors";
+            secFood.classList.remove('hide');
+            secTimeline.classList.add('hide');
+        });
+
+        // Init
+        renderFilters();
+        renderList();
+        renderFood();
+    </script>
+</body>
+</html>
